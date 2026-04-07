@@ -1,6 +1,6 @@
 # VisDrone object detection and Comparative Study with YOLO 
 
-This project uses **YOLO** on the **VisDrone** dataset. I train several models, look at loss and results, try a bigger model and then **L2 regularization**, and compare a few **different YOLO versions**.
+This project uses **YOLO** on the **VisDrone** dataset. I train several models, look at loss and results, try a bigger model and then L2 regularization, and compare a few different YOLO versions.
 
 ---
 
@@ -22,16 +22,16 @@ This project uses **YOLO** on the **VisDrone** dataset. I train several models, 
 
 ## What I did (short summary)
 
-I built a **drone-view object detection** project on **VisDrone** with **Ultralytics YOLO**.
+I built a drone-view object detection project on VisDrone with Ultralytics YOLO.
 
-1. I started with **YOLOv11n** as a **baseline**.  
-2. I trained **YOLOv11s** to see if a **larger model** helps on the same data.  
-3. The train and validation loss were **farther apart** for the bigger model, so I tried **stronger L2 (weight decay)** on YOLOv11s to help **generalization**.  
-4. I also trained **YOLOv26n**, **YOLOv5n**, and **YOLOv8n** with the **same kind of setup** so I can compare **different YOLO families**.
+1. I started with YOLOv11n as a baseline.  
+2. I trained YOLOv11s to see if a larger model helps on the same data.  
+3. The train and validation loss were farther apart for the bigger model, so I tried stronger L2 (weight decay) on YOLOv11s to help generalization.  
+4. I also trained YOLOv26n, YOLOv5n, and YOLOv8n with the same kind of setup so I can compare different YOLO families.
 
-The **`Analysis/`** notebooks show **training vs validation loss**, **mAP**, and my notes on **convergence**, **overfitting**, **underfitting**, and how **dataset size** and **model size** matter.
+The `Analysis/` notebooks show training vs validation loss, mAP, and my notes on convergence, overfitting, underfitting, and how dataset size and model size matter.
 
-The **[comparison notebook](Analysis/results-discussion-comparison.ipynb)** puts **numbers in tables** (mAP, precision, recall, F1, rough model size, training time) and shows **confusion matrices** and **PR curves** for every run **next to each other**.
+The [comparison notebook](Analysis/results-discussion-comparison.ipynb) puts numbers in tables (mAP, precision, recall, F1, rough model size, training time) and shows confusion matrices and PR curves for every run next to each other.
 
 ---
 
@@ -54,18 +54,18 @@ Each analysis notebook matches one training run:
 
 1. **YOLOv11n**: baseline on VisDrone.  
 2. **YOLOv11s**: same idea, more parameters.  
-3. **YOLOv11s + L2**: after seeing the train/val gap, I added **more regularization**. The comparison notebook has **before and after** numbers.  
-4. **YOLOv26n, YOLOv5n, YOLOv8n**: compare **different YOLO versions** on the same general setup.
+3. **YOLOv11s + L2**: after seeing the train/val gap, I added more regularization. The comparison notebook has before and after numbers.  
+4. **YOLOv26n, YOLOv5n, YOLOv8n**: compare different YOLO versions on the same general setup.
 
 ---
 
 ## How to reuse this repo
 
-I trained mostly in **Kaggle / Colab-style** notebooks. Each run folder has an **`args.yaml`** with the **settings** I used.
+I trained mostly in Kaggle / Colab-style notebooks. Each run folder has an `args.yaml` with the settings I used.
 
-You can **clone** the repo and open the notebooks. You do **not** have to re-train to read the **analysis** or the **comparison** notebook.
+You can clone the repo and open the notebooks. You do not have to re-train to read the analysis or the comparison notebook.
 
-To run [`Analysis/results-discussion-comparison.ipynb`](Analysis/results-discussion-comparison.ipynb), start Jupyter from the **main project folder** (`yolo`) or from **`Analysis/`**, so the paths to `*_export/` work.
+To run [`Analysis/results-discussion-comparison.ipynb`](Analysis/results-discussion-comparison.ipynb), start Jupyter from the main project folder (`yolo`) or from `Analysis/`, so the paths to `*_export/` work.
 
 ---
 
