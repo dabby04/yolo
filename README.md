@@ -467,13 +467,16 @@ These steps, together with the task-by-task mapping below, are sufficient to ful
 
 ## How to Reuse or Reproduce
 
+For concrete step-by-step instructions, see the "Reproducing and Reusing This Project" section above.
+
+In short:
+
 - Start a GPU notebook environment (Kaggle / Colab or local with CUDA).
 - Clone this repository and open it at the project root (`yolo`).
-- Make sure your data is in a directory layout compatible with the `data.yaml` files (or update the paths).
-- To inspect results **without retraining**, open:
-  - Any `*_export/` run folder and view `results.png`, `confusion_matrix*.png`, and `val_batch*_pred.jpg`.
-  - The analysis notebooks in [Analysis](Analysis), especially [Analysis/results-discussion-comparison.ipynb](Analysis/results-discussion-comparison.ipynb).
-- To retrain, open the corresponding training notebook (e.g., [baseline-model.ipynb](baseline-model.ipynb)) and run the cells, adjusting hyperparameters or data paths as needed.
+- Ensure your data layout matches the `data.yaml` files (or update the paths).
+- Either:
+  - Reuse the existing `best.pt` weights from the export folders, or
+  - Re-run the training and test-challenge notebooks listed in the navigation section below.
 
 ---
 
