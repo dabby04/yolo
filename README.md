@@ -37,8 +37,9 @@ yolo/
 ## Setup and Requirements
 
 - Python 3.10 or later.
-- GPU environment recommended for training (Kaggle, Colab, or a local CUDA-enabled machine); CPU is sufficient for reading notebooks and running small inference demos.
-- Core Python dependencies (representative):
+- GPU environment recommended for training (Kaggle or Colab)
+- CPU can be used but takes many hours to run.
+- Core Python dependencies:
   - `ultralytics` (YOLO)
   - `torch`, `torchvision`
   - `numpy`, `pandas`, `matplotlib`, `seaborn`
@@ -50,7 +51,7 @@ You can install a minimal environment with:
 pip install ultralytics torch torchvision opencv-python numpy pandas matplotlib seaborn
 ```
 
-All experiments were run in notebook-based GPU environments (Kaggle / Colab style). Each export folder contains an `args.yaml` file that records the exact Ultralytics training configuration used.
+All experiments were run in notebook-based GPU environments (Kaggle & Colab). Each export folder contains an `data.yaml` file that records the exact Ultralytics training configuration used.
 
 
 ## Data (VisDrone2019-DET)
@@ -126,6 +127,14 @@ What I do in this task:
 - Training environment: GPU notebook (Kaggle/Colab-style).
 - Standard hyperparameters for a first run (default Ultralytics schedule, modest epochs).
 
+**Baseline Setup for training:**
+- **Model** = YOLO11n
+- **Data** = YAML_PATH (`data.yaml` path)
+- **Epochs** = 200
+- **imgsz** = 640
+- **Batch**    = 16
+- **patience** = 50 (for early stopping when there has been no improvement for the last 50 epochs)
+
 **Export and artifacts:**
 
 - Output folder: [baseline_yolo11n_export/runs/baseline_yolo11n](baseline_yolo11n_export/runs/baseline_yolo11n)
@@ -172,6 +181,14 @@ For detailed loss curves and over/underfitting analysis, see
 
 - Hypothesis: increasing model capacity will improve $\text{mAP}$ on VisDrone, at the cost of longer training time and potentially more overfitting.
 
+** Setup for training:**
+- **Model** = YOLO11s
+- **Data** = YAML_PATH (`data.yaml` path)
+- **Epochs** = 200
+- **imgsz** = 640
+- **Batch**    = 16
+- **patience** = 50 (for early stopping when there has been no improvement for the last 50 epochs)
+
 **Export and artifacts:**
 
 - Output folder: [baseline_yolo11s_export/runs/baseline_yolo11s](baseline_yolo11s_export/runs/baseline_yolo11s)
@@ -204,7 +221,15 @@ For more discussion and plots, see
 
 **Notebook:** [iterative-model.ipynb](iterative-model.ipynb)
 
-**Model:** YOLOv11s with increased weight decay (L2 regularization)
+** Setup for training:**
+- **Model:** YOLOv11s with increased weight decay (L2 regularization)
+- **Data** = YAML_PATH (`data.yaml` path)
+- **Epochs** = 200
+- **imgsz** = 640
+- **Batch**    = 16
+- **Weight decay** = 0.001 (L2 regularization)
+- **patience** = 50 (for early stopping when there has been no improvement for the last 50 epochs)
+
 
 **Export and artifacts:**
 
@@ -245,6 +270,14 @@ Detailed curves and comments are in
 - [comparison-model1.ipynb](comparison-model1.ipynb): YOLOv26n
 - [comparison-model2.ipynb](comparison-model2.ipynb): YOLOv5n
 - [comparison-model3.ipynb](comparison-model3.ipynb): YOLOv8n
+
+** Setup for training:**
+- **Models** = YOLO26n, YOLO5n, YOLO8n
+- **Data** = YAML_PATH (`data.yaml` path)
+- **Epochs** = 200
+- **imgsz** = 640
+- **Batch**    = 16
+- **patience** = 50 (for early stopping when there has been no improvement for the last 50 epochs)
 
 **Exports and artifacts:**
 
