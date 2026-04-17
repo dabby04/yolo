@@ -181,7 +181,7 @@ For detailed loss curves and over/underfitting analysis, see
 
 - Hypothesis: increasing model capacity will improve $\text{mAP}$ on VisDrone, at the cost of longer training time and potentially more overfitting.
 
-** Setup for training:**
+**Setup for training:**
 - **Model** = YOLO11s
 - **Data** = YAML_PATH (`data.yaml` path)
 - **Epochs** = 200
@@ -221,7 +221,7 @@ For more discussion and plots, see
 
 **Notebook:** [iterative-model.ipynb](iterative-model.ipynb)
 
-** Setup for training:**
+**Setup for training:**
 - **Model:** YOLOv11s with increased weight decay (L2 regularization)
 - **Data** = YAML_PATH (`data.yaml` path)
 - **Epochs** = 200
@@ -271,7 +271,7 @@ Detailed curves and comments are in
 - [comparison-model2.ipynb](comparison-model2.ipynb): YOLOv5n
 - [comparison-model3.ipynb](comparison-model3.ipynb): YOLOv8n
 
-** Setup for training:**
+**Setup for training:**
 - **Models** = YOLO26n, YOLO5n, YOLO8n
 - **Data** = YAML_PATH (`data.yaml` path)
 - **Epochs** = 200
